@@ -1,0 +1,12 @@
+
+<div class="container m-3">
+  <div class="card" *ngFor="let product of products">
+    <div class="card-header">
+      {{product?.title}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">  {{product?.user?.realm}}</h5>
+      <p class="card-text">{{product.description}}</p>
+    </div>
+  </div>
+</div>

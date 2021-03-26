@@ -1,0 +1,48 @@
+
+<div class="container" >
+
+  <div *ngIf="login==false && register==false" class="row content center d-flex flex-column justify-content-center d-flex align-items-center">
+    <button type="submit" class="btn btn-primary m-3" (click)="login=true">Iniciar Sesión</button>
+    <button type="submit" class="btn btn-primary m-3" (click)="register=true">Registrarse</button>
+
+  </div>
+
+  <form *ngIf="register">
+    <div class="form-group">
+      <label for="realm">Nombre</label>
+      <input type="text" #realm name="realm" [(ngModel)]="newUser.realm" class="form-control" id="realm" aria-describedby="realmHelp" placeholder="Nombre">
+      <small id="realmHelp" class="form-text text-muted">Ingrese  Nombre completo.</small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" #email name="email" [(ngModel)]="newUser.email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese email">
+      <small id="emailHelp" class="form-text text-muted">Ingrese Correo electronico.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" name="password"  [(ngModel)]="newUser.password" class="form-control" id="password" placeholder="Contraseña">
+    </div>
+
+    <button type="submit" class="btn m-3 btn-primary" (click)="registerNewUser()">Enviar</button>
+    <button type="submit" class="btn m-3 btn-secondary" (click)="login=false;register=false">Cancelar</button>
+  </form>
+
+
+  <form *ngIf="login">
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" #email name="email" [(ngModel)]="newUser.email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese email">
+      <small id="emailHelp" class="form-text text-muted">Ingrese Correo electronico.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" name="password"  [(ngModel)]="newUser.password" class="form-control" id="password" placeholder="Contraseña">
+    </div>
+
+    <button type="submit" class="btn m-3 btn-primary" (click)="loginUser()">Ingresar</button>
+    <button type="submit" class="btn m-3 btn-secondary" (click)="login=false;register=false">Cancelar</button>
+  </form>
+
+</div>
+

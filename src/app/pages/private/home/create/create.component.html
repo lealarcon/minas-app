@@ -1,0 +1,17 @@
+
+  <form class=" m-3">
+    
+    <div class="form-group">
+      <label for="email">Titulo</label>
+      <input type="text" #title name="title" [(ngModel)]="product.title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Ingrese title">
+  
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <input type="text" #description name="description" [(ngModel)]="product.description" class="form-control" id="description" aria-describedby="descriptionHelp" placeholder="Ingrese Descripcion">
+  
+    </div>
+   
+
+    <button type="submit" class="btn m-3 btn-primary" (click)="createProduct()">Crear Producto</button>
+  </form>
